@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-cmn-Hans-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>《三字经》 - 文博社</title>
+    <link rel="stylesheet" href="//unpkg.com/heti/umd/heti.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="container">
+    <article class="heti heti--ancient">
+        <h1>三字经</h1>
+        <p class="heti-small article-description">
+            《三字经》是中国的传统儿童启蒙教材，与《百家姓》《千字文》并称为三大国学启蒙读物。作者相传为宋王应麟（一说为区适之），明清学者陆续补充，1928年章太炎重订。三言押韵，分教学之要、幼学之序、读书次第、勤学典范、为学效果等篇。
+        </p>
+        <p class="heti-verse heti-x-large" id="article-body">
+        </p>
+    </article>
+    <footer>
+        <hr>
+        <small class="power-by">文字排版效果由 <a href="https://sivan.github.io/heti/">赫蹏</a> 驱动，网页托管于 <a href="https://github.com/WingBo/sanzijing">GitHub</a> 。</small>
+    </footer>
+</main>
+
+<script src="//unpkg.com/heti/umd/heti-addon.min.js"></script>
+<script src="./data.js"></script>
+<script>
+    let artBodyEl = document.getElementById("article-body");
+    const contentItems = szjData.content
+    let _body = "";
+    contentItems.forEach((content) => {
+        _body += content + '<br>';
+    })
+    artBodyEl.innerHTML = _body;
+    const heti = new Heti('.heti');
+    heti.autoSpacing();
+</script>
+</body>
+</html>
